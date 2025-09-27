@@ -1,0 +1,9 @@
+{
+  "AWS_ACCESS_KEY_ID": "",
+  "AWS_SECRET_ACCESS_KEY": "",
+  "S3_BUCKET": "",
+  "S3_REGION": "us-east-1",
+  "SENDGRID_API_KEY": "",
+  "LOCAL_STORAGE": "storage/uploaded_pdfs",
+  "SIGNED_URL_EXPIRY": 86400
+}
