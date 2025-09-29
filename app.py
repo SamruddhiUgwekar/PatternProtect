@@ -82,13 +82,13 @@ if submit:
         #st.code(download_link)
         st.success("Watermarked PDF ready!")
 
-with open(tmp_output_path, "rb") as f:
-    st.download_button(
-        label="⬇️ Download Watermarked PDF",
-        data=f,
-        file_name=tmp_out_name,
-        mime="application/pdf"
-    )
+        with open(tmp_output_path, "rb") as f:
+           st.download_button(
+              label="⬇️ Download Watermarked PDF",
+              data=f,
+              file_name=tmp_out_name,
+              mime="application/pdf"
+           )
 
         # Try to send email
         sent = send_delivery_email(buyer_email, buyer_name, download_link, pattern_name, expiry_hours)
