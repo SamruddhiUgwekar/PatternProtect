@@ -6,7 +6,7 @@ import boto3
 from botocore.exceptions import ClientError
 from config import LOCAL_STORAGE, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, S3_BUCKET, S3_REGION, SIGNED_URL_EXPIRY
 from watermark.watermark import add_watermark
-#from utils.email_sender import send_delivery_email
+from utils.email_sender import send_delivery_email
 from utils.tracker import log_event, read_events
 
 st.set_page_config(page_title="PatternProtect MVP", layout="centered")
