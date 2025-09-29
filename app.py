@@ -78,8 +78,17 @@ if submit:
             download_link = f"file://{os.path.abspath(tmp_output_path)}"
             st.info("S3 not configured — file available locally. You can copy the path below.")
 
-        st.write("Download link:")
-        st.code(download_link)
+        #st.write("Download link:")
+        #st.code(download_link)
+        st.success("Watermarked PDF ready!")
+
+with open(tmp_output_path, "rb") as f:
+    st.download_button(
+        label="⬇️ Download Watermarked PDF",
+        data=f,
+        file_name=tmp_out_name,
+        mime="application/pdf"
+    )
 
         # Try to send email
         sent = send_delivery_email(buyer_email, buyer_name, download_link, pattern_name, expiry_hours)
