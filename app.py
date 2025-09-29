@@ -15,7 +15,7 @@ st.title("PatternProtect — MVP (watermark & deliver PDFs)")
 st.markdown(
     """
     Upload pattern PDF, enter buyer info, and generate a buyer-specific watermarked PDF.
-    This MVP supports local storage by default. If you set AWS creds (env vars), files will be uploaded to S3 and signed URLs will be used.
+    This MVP supports local storage by default. In the next version files will be uploaded to secured cloud storage and signed URLs will be used.
     """
 )
 
