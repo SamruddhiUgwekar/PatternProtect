@@ -1,7 +1,10 @@
 # config.py
-# Load settings from settings.json instead of environment variables
+# Load settings from environment variables
 
 import os
+
+# SendGrid API key (from env vars)
+SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 
 # Local fallback storage
 LOCAL_STORAGE = "storage/uploaded_pdfs"
