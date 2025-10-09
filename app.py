@@ -106,3 +106,27 @@ if df is None or df.empty:
     st.info("No events logged yet.")
 else:
     st.dataframe(df)
+
+st.header("Share your feedback")
+
+with st.form("feedback_form"):
+    feedback_name = st.text_input("Your name (optional)")
+    feedback_email = st.text_input("Your email (optional)")
+    feedback_text = st.text_area("Your feedback / suggestions")
+    submit_feedback = st.form_submit_button("Submit Feedback")
+
+if submit_feedback:
+    if feedback_text.strip() == "":
+        st.warning("Please enter some feedback before submitting.")
+    else:
+        # Log the feedback using your existing logger
+        log_event(
+            seller_name=feedback_name or "Anonymous",
+            pattern_name="Feedback",
+            buyer_name=feedback_name or "Anonymous",
+            buyer_email=feedback_email,
+            license_type="N/A",
+            event="feedback",
+            notes=feedback_text
+        )
+        st.success("Thank you! Your feedback has been recorded.")
